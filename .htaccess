@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+    # negotiation拡張を無効化
+    <IfModule mod_negotiation.c>
+            Options -MultiViews -Indexes
+    </IfModule>
+    # phpファイルへの直接アクセスを禁じる
+    <Files ~ "(\.php)$">
+        deny from all
+    </Files>
+    # index.phpへのアクセスを許可
+    <Files ~ "^(index\.php)">
+        allow from all
+    </Files>
+
+    # public/index.phpへリライト
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ public/index.php [L]
+</IfModule>
