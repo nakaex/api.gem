@@ -5,6 +5,8 @@ $router = require_once dirname(__DIR__, 1) . '/Routes/Api.php';
 $match = $router->match();
 
 if ($match !== false) {
+    Dotenv\Dotenv::createImmutable(dirname(__DIR__, 1))->load();
+    require_once dirname(__DIR__, 1) . '/Database/Database.php';
     require_once dirname(__DIR__, 1) . '/Bases/@Type.php';
     require_once dirname(__DIR__, 1) . '/Models/@Type.php';
     require_once dirname(__DIR__, 1) . '/Controllers/@Type.php';

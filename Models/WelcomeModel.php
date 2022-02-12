@@ -8,6 +8,6 @@ class WelcomeModel extends Model
 {
     public function get()
     {
-        echo 'welcome';
+        $this->data['data'] = "test_data";
     }
 }

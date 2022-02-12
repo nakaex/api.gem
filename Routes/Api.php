@@ -8,6 +8,6 @@ $router->map('GET|POST|PATCH|DELETE', '/user', function () {
     echo "aaaa";
 });
 
-$router->map('GET', '/', 'Api\Controllers\WelcomeController@get', 'welcome');
+$router->map('GET|POST|PUT|PATCH|DELETE', '/', 'Api\Controllers\WelcomeController@get', 'welcome');
 
 return $router;
